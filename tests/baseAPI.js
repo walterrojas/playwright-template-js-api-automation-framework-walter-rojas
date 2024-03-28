@@ -20,7 +20,6 @@ async function getRequest(endpoint) {
 
 async function postRequest(endpoint, body) {
   const context = await createRequestContext();
-  console.log(`Making POST request to: ${BASE_URL}${endpoint}`);
   return context.post(`${BASE_URL}${endpoint}`, { data: body });
 }
 

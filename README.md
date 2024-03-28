@@ -11,7 +11,8 @@ This repository contains a template project for API testing using Playwright. It
 ## Features
 
 - Support for GET, POST, PUT, and DELETE HTTP methods.
-- Reusable request utility functions.
+- Users API tests to be executed in parallel and serial
+- Reusable request utility functions (getTimeStamp, getRandomValue, generateDynamicEmail, etc)
 - Environment configuration using `.env` files for secure token management.
 - Dynamic data handling using external JSON files.
 
@@ -41,6 +42,7 @@ Note: The fs module is a part of Node.js and does not require separate installat
 ```yaml {"id":"01HRYZ8CC4QXFHXBWG2WMHPZ6R"}
 GOREST_API_TOKEN=YOUR_API_TOKEN
 BASE_URL=https://gorest.co.in/public/v2
+PRINT_CONSOLE_LOG=true
 ```
 
 ## Running Tests
@@ -48,20 +50,34 @@ BASE_URL=https://gorest.co.in/public/v2
 To run the tests, use the following command:
 
 ```sh {"id":"01HRYZ8CC4QXFHXBWG2XN4MZQM"}
-npm run test:api
+npm run api
+```
+
+To run the smoke tests, use the following command:
+
+```sh {"id":"01HT16E6JRAQAMCEKV330NP7RT"}
+npm run api:smoke
+```
+
+To run the regression tests, use the following command:
+
+```sh {"id":"01HT16EVK3J2YDCC7VNECRG8B3"}
+npm run api:regression
 ```
 
 To show the web report, use the following command:
 
 ```sh {"id":"01HRZZGK5N62FJVFXDVVCBYS6J"}
-npm run report
+npm run open-web-report
 ```
 
 ## Project Structure
 
-- `baseAPI.js`: Contains functions for making HTTP requests.
 - `tests/`: Directory containing test files.
-- `.env`: Environment variables for API token and base URL.
+    - `users/`: Directory containing Users specs and json files.
+    - `utils/`: Directory containing the utils.js file.
+    - `baseAPI.js`: Contains functions for making HTTP requests.
+- `.env`: Environment variables for API token, base URL, etc.
 
 ## Writing Tests
 
