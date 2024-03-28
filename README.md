@@ -1,9 +1,3 @@
----
-runme:
-  id: 01HRYZ8CC5QPRRHPG4CF3P8Z2H
-  version: v3
----
-
 # Playwright Template for API Automation Framework using JavaScript by Walter Rojas
 
 This repository contains a template project for API testing using Playwright. It is designed to provide a robust and flexible framework for testing RESTful APIs, including features for sending various types of HTTP requests, handling responses
